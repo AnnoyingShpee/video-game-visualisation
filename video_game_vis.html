@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Video Game Infomation Visualisaiton</title>
+		<!-- JQuery and JQurty UI current version -->
+		<script src='http://code.jquery.com/jquery-3.6.3.js'></script>
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+		<!-- Highcharts libraries -->
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/highcharts-more.js"></script>
+		<script src="http://code.highcharts.com/modules/exporting.js"></script>
+		<script src="http://code.highcharts.com/modules/export-data.js"></script>
+		<script src="http://code.highcharts.com/modules/offline-exporting.js"></script>	
+		<script src="http://code.highcharts.com/modules/accessibility.js"></script>
+		<!-- local Javascript files -->
+		<script type="text/javascript" src="video_game_vis.js"></script>
+		<!-- remote and local CSS stylesheet -->
+		<link rel="stylesheet" href="video_game_vis.css">
+	</head>
+
+	<body>
+		<header>
+			<h1><a href="#tab1">Video Game Reporting</a></h1>
+			<h2>Data Source: <a href="https://www.statista.com/markets/417/topic/478/video-gaming-esports/#overview">Statista.com</a></h2>
+		</header>
+
+		<div id="tabs">
+			<ul>
+				<li class="tab-label"><a href="#tab1">Background</a></li>
+				<li class="tab-label"><a href="#tab2">Games as a Business</a></li>
+				<li class="tab-label"><a href="#tab3">Free-To-Play Example</a></li>
+			</ul>
+			
+			<div id="tab1" class="tab">
+				<div id="player-count-chart-area" class="component">
+					<div id="player-count-chart"></div>
+				</div>
+				<div id="steam-games-chart-area" class="component">
+					<div id="steam-games-chart"></div>
+					<div class="filter">
+						Data to display: 
+						<select name="steam-games-choice" id="steam-games-choice"  >
+							<option value="steam_games_number">Actual Number</option>
+							<option value="steam_games_percent_increase">Percentage Increase</option>
+						</select>
+						Chart Type: 
+						<select name="steam-games-chart-choice" id="steam-games-chart-choice"  >
+							<option value="line">Line</option>
+							<option value="column">Column</option>
+						</select>
+					</div>
+				</div>
+				<div id="media-market-revenue-chart-area" class="component">
+					<div id="media-market-revenue-chart"></div>
+					<div class="filter">
+						Data to display: 
+						<select name="media-market-choice" id="media-market-choice">
+							<option value="media_market_revenue">Actual Value</option>
+							<option value="media_market_revenue_change">Revenue Growth</option>
+						</select>
+						Chart Type: 
+						<select name="media-market-chart-choice" id="media-market-chart-choice">
+							<option value="column">Column</option>
+							<option value="line">Line</option>
+							<option value="bar">Bar</option>
+							<option value="stack">Stacked Column</option>
+						</select>
+					</div>
+				</div>
+				<div id="device-game-revenue-chart-area" class="component">
+					<div id="device-game-revenue-chart"></div>
+					<div class="filter">
+						Chart Type: 
+						<select name="device-game-revenue-chart-choice" id="device-game-revenue-chart-choice">
+							<option value="pie">Pie</option>
+							<option value="bar">Bar</option>
+							<option value="column">Column</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div id="tab2" class="tab">
+				<div id="game-revenue-country-chart-area" class="component">
+					<div id="game-revenue-country-chart"></div>
+				</div>
+				<div id="business-models-chart-area" class="component">
+					<div id="business-models-chart"></div>
+				</div>
+				<div id="f2p-game-revenue-chart-area" class="component">
+					<div id="f2p-game-revenue-chart"></div>
+					<div class="filter">
+						Data to Display: 
+						<select name="f2p-game-revenue-choice" id="f2p-game-revenue-choice">
+							<option value="f2p-game-revenue">Actual Value</option>
+							<option value="f2p-game-revenue-change">Revenue Growth</option>
+						</select>
+						Chart Type: 
+						<select name="f2p-game-revenue-chart-choice" id="f2p-game-revenue-chart-choice">
+							<option value="line">Line</option>
+							<option value="bar">Bar</option>
+							<option value="column">Column</option>
+							<option value="stack">Stacked Column</option>
+						</select>
+					</div>
+				</div>
+				
+			</div>
+
+			<div id="tab3" class="tab">
+				<div id="" class="component">
+					<div class="chart-area">
+						<p>You are a bold one</p>
+					</div>
+					<div class="filter-area">
+						<p><button name="select" class="display-change">Display changes</button></p>
+						Chart Type:
+					</div>
+				</div>
+				<div class="component">
+					<div class="chart-area">
+						
+					</div>
+					<div class="filter-area">
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			$("#tabs").tabs();
+		</script>
+			
+	</body>
+</html>
