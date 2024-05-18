@@ -27,29 +27,30 @@
 
 		<div id="tabs">
 			<ul>
-				<li class="tab-label"><a href="#tab1">Background</a></li>
-				<li class="tab-label"><a href="#tab2">Games as a Business</a></li>
-				<li class="tab-label"><a href="#tab3">Free-To-Play Example</a></li>
+				<li class="tab-label"><a href="#tab1">Introduction</a></li>
+				<li class="tab-label"><a href="#tab2">Games' Economic Effect</a></li>
+				<li class="tab-label"><a href="#tab3">Games as a Business</a></li>
+				<li class="tab-label"><a href="#tab4">Free-To-Play Example</a></li>
 			</ul>
 			
 			<div id="tab1" class="tab">
-				<div id="player-count-chart-area" class="component">
-					<div id="player-count-chart"></div>
-				</div>
-				<div id="steam-games-chart-area" class="component">
-					<div id="steam-games-chart"></div>
-					<div class="filter">
-						Data to display: 
-						<select name="steam-games-choice" id="steam-games-choice"  >
-							<option value="steam_games_number">Actual Number</option>
-							<option value="steam_games_percent_increase">Percentage Increase</option>
-						</select>
-						Chart Type: 
-						<select name="steam-games-chart-choice" id="steam-games-chart-choice"  >
-							<option value="line">Line</option>
-							<option value="column">Column</option>
-						</select>
-					</div>
+				<div class="component">
+					<h2>Background</h2>
+					<p>
+						A <a href="https://en.wikipedia.org/wiki/Video_game">video game</a> is an electronic game that involves a user interacting with a 
+						user interface or device to create audio and visual feedback from an electronic device. The earliest known video game was from 1947, 
+						a "cathode-ray tube amusement device" by Thomas T. Goldsmith Jr. and Estle Ray Mann, that allows a user to use an analog device to 
+						control a dot to simulate a missle firing at targets. From then on, more inventions with the goal of playing a game were introduced, 
+						giving way to the video game industry. Back then, video games could only be played on an arcade machine (How many people still remember those?!) 
+						or consoles dedicated to games, which then evolved to games that can be played on a computer or mobile device, with enhanced graphics, 
+						sound, and many more features. When video games were starting out, many people, mostly adults and parents, would argue that video games 
+						were nothing but mere time-wasters and would not bring any benefits. Now, playing and developing video games have become something 
+						more than just a hobby, it is a business, with its own market and industry. And with the research in technological fields such as 
+						<a href="https://en.wikipedia.org/wiki/Virtual_reality">virtual reality</a> and 
+						<a href="https://en.wikipedia.org/wiki/Augmented_reality">augmented reality</a>, its growth only continues. This website aims to visualise
+						and discuss some relevant topics relating to video games with the target audience being those that have reservations regarding video games 
+						as a whole.
+					</p>
 				</div>
 				<div id="media-market-revenue-chart-area" class="component">
 					<div id="media-market-revenue-chart"></div>
@@ -67,7 +68,48 @@
 							<option value="stack">Stacked Column</option>
 						</select>
 					</div>
+					<p>
+						The media market contains a variety of platforms that allows for content to be created, distributed, and consumed. This 
+						ranges from traditional means (TV, radio, and printed mediums like books), to digital (social media and streaming services).
+						The video game industry is no exception, being part of the digital media side of the market. Looking at the graph, video games 
+						can be seen to have the 2nd highest market overall, only being outcompeted by TV & Video. When the COVID-19 pandemic happened, 
+						tradional media markets were affected negatively with cinema suffering the greatest as it was difficult to film are maintaining 
+						social distancing. Due to quarantine, most people would be staying in their homes and needed to do something to pass the time, 
+						usually by playing games or watching shows or videos in streaming sites or social media. Hence, the increase in revenue rather 
+						than decrease.
+					</p>
 				</div>
+
+				<div id="player-count-chart-area" class="component">
+					<div id="player-count-chart"></div>
+					<p>
+						The line chart shows the total number of people who play video games worldwide every year. It shows 
+						an overall increase in player count albeit small. The years with asterisks (*) indicates forecasted 
+						values, meaning that there will be a continuous growth in player count in the following years.
+					</p>
+				</div>
+				
+				<div id="steam-games-chart-area" class="component">
+					<div id="steam-games-chart"></div>
+					<div class="filter">
+						Chart Type: 
+						<select name="steam-games-chart-choice" id="steam-games-chart-choice"  >
+							<option value="line">Line</option>
+							<option value="column">Column</option>
+						</select>
+					</div>
+					<p>
+						Steam is a video game digital distribution site developed by Valve Corporation that allows for distribution of 
+						third-party video games (Games not made by them), allowing easier access to different games. The chart above
+						shows the number of new games released on Steam each year. Yes, that is not the total number of games that 
+						the game distribution platform has each year, it is the number of games released on that particular year. <br>
+						Compared to the previous chart which showed a steady increase in player count each year, the increase shown here 
+						is much more significant, with the number of games released more than the previous year. The only exception 
+						is 2019, likely due to COVID-19 disrupting the workflow of game developers, yet did not affect them 
+						significantly as the number of games released was still close to the previous year's amount. 
+					</p>
+				</div>
+				
 				<div id="device-game-revenue-chart-area" class="component">
 					<div id="device-game-revenue-chart"></div>
 					<div class="filter">
@@ -78,6 +120,14 @@
 							<option value="column">Column</option>
 						</select>
 					</div>
+					<p>
+						Video games aren't excluded to only computers, they can be played on a variety of devices. The simplest way to define the 
+						type of video game is the of device that they can be played on. These can be classified into 3 categories: Computers (PC), 
+						Console (PS5, XBOX), and Mobile Phones. The chart above shows the total revenue made by video games based on device type in
+						the year 2022. Mobile games managed to make a total of $103.5 billion, more than PC and Console games combined. As phones 
+						nowadays are powerful enough to be a personal home computer that can be carried anywhere, games end up becoming more 
+						accessible to play.
+					</p>
 				</div>
 			</div>
 
@@ -85,16 +135,41 @@
 				<div id="game-revenue-country-chart-area" class="component">
 					<div id="game-revenue-country-chart"></div>
 				</div>
+				<div id="game-industry-gva-chart-area" class="component">
+					<div id="game-industry-gva-chart"></div>
+					<div class="filter">
+						Chart Type: 
+						<select name="game-industry-gva-chart-choice" id="game-industry-gva-chart-choice">
+							<option value="line">Line</option>
+							<option value="column">Column</option>
+						</select>
+					</div>
+				</div>
+				<div id="game-industry-employment-chart-area" class="component">
+					<div id="game-industry-employment-chart"></div>
+				</div>
+			</div>
+
+			<div id="tab3" class="tab">
 				<div id="business-models-chart-area" class="component">
 					<div id="business-models-chart"></div>
+					<p>
+						This chart shows the types of business models used for video game monetization and their popularity among game developers. 
+						A survey was used to collect the data on which business models were used by game developers for their games. The survey 
+						allows for multiple models to be chosen by the respondents, hence the percentage values adding up to more than 100%. This 
+						is mainly because games usually use more than one business model in their games rather than just the one. One example is 
+						the <a href="https://en.wikipedia.org/wiki/Call_of_Duty">Call of Duty</a> franchise where not only do the games use a 
+						digital premium model, they also have paid in-game items as well. When it comes to digital premium games, which is 
+						selling a digital game, it is the most popular among developers, followed by free-to-download games. 
+					</p>
 				</div>
 				<div id="f2p-game-revenue-chart-area" class="component">
 					<div id="f2p-game-revenue-chart"></div>
 					<div class="filter">
 						Data to Display: 
 						<select name="f2p-game-revenue-choice" id="f2p-game-revenue-choice">
-							<option value="f2p-game-revenue">Actual Value</option>
-							<option value="f2p-game-revenue-change">Revenue Growth</option>
+							<option value="f2p_game_revenue">Actual Value</option>
+							<option value="f2p_game_revenue_change">Revenue Growth</option>
 						</select>
 						Chart Type: 
 						<select name="f2p-game-revenue-chart-choice" id="f2p-game-revenue-chart-choice">
@@ -104,11 +179,20 @@
 							<option value="stack">Stacked Column</option>
 						</select>
 					</div>
+					<p>
+						Free-To-Play or Free-To-Download (F2P) games are games that do not require the user to pay any money to obtain or play the game. 
+						However, if that is the case, it can be easily assumed that these tpyes of games do not make any money for the developers. 
+						Based on this chart, this is not the case as it shows the worldwide revenue of games that are F2P from 2018 to 2024. This 
+						is because games will typically use another business model along with the F2P model to generate income. For example, 
+						<a href="https://en.wikipedia.org/wiki/Team_Fortress_2">Team Fortress 2</a> is a F2P computer game that contains items, usually hats, 
+						in the game that can be bought by the player using real money to change their characters' appearance. The reason for F2P console games 
+						having very low revenue compared to PC and mobile is that most console games adopt a digital premium model. 
+					</p>
 				</div>
 				
 			</div>
 
-			<div id="tab3" class="tab">
+			<div id="tab4" class="tab">
 				<div id="" class="component">
 					<div class="chart-area">
 						<p>You are a bold one</p>

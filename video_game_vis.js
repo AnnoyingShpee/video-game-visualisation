@@ -12,10 +12,6 @@ $(function () {
         {name: 'Steam Games Released', data: [72, 87, 150, 153, 202, 286, 312, 350, 444, 573, 1355, 2505, 4319, 6165, 7934, 7711, 9394, 9924, 10341, 12068]}
     ];
 
-    var steam_games_percent_increase = [
-        {name: "Steam Games Increase (%)", data: [0, 17.24, 73.13, 2.00, 32.09, 42.06, 9.09, 12.15, 26.91, 28.85, 135.48, 84.59, 72.62, 44.58, -2.88, 21.54, 5.63, 4.22, 16.90]}
-    ];
-
     // For tab 2 visualisations (Finances)
     // Tab 2 datasets
 
@@ -29,14 +25,14 @@ $(function () {
         {name: 'TV & Video', data: [488.80, 517.40, 549.90, 575.70, 638.30, 640.70, 672.10, 701.10, 725.80]}
     ];
 
-    // Change in market revenue of media in % from 2017 to 2025
+    // Change in market revenue of media in % from 2018 to 2025
     var all_media_market_revenue_change = [
-        {name: 'Books', data: [0, 2.2, 3.1, -6.9, 5.9, -4.7, 5.2, 4.2, 3.2]},
-        {name: 'Cinema', data: [0, 10.1, 8.3, -72.8, 86.9, 53.3, 27.8, 15.1, 7.7]},
-        {name: 'Games', data: [0, 87.1, 9.4, 21.3, 15.0, -2.2, 12.3, 12.1, 10.3]},
-        {name: 'Music, Radio, Podcasts', data: [0, 5.7, 6.3, -20.8, 9.3, 29.6, 11.1, 4.7, 3.8]},
-        {name: 'Newspaper', data: [0, -2.4, -2.2, -12.3, 0.6, -5.5, -0.7, -1.2, -2.0]},
-        {name: 'TV & Video', data: [0, 5.9, 6.3, 4.7, 10.9, 0.4, 4.9, 4.3, 3.5]}
+        {name: 'Books', data: [2.2, 3.1, -6.9, 5.9, -4.7, 5.2, 4.2, 3.2]},
+        {name: 'Cinema', data: [10.1, 8.3, -72.8, 86.9, 53.3, 27.8, 15.1, 7.7]},
+        {name: 'Games', data: [87.1, 9.4, 21.3, 15.0, -2.2, 12.3, 12.1, 10.3]},
+        {name: 'Music, Radio, Podcasts', data: [5.7, 6.3, -20.8, 9.3, 29.6, 11.1, 4.7, 3.8]},
+        {name: 'Newspaper', data: [-2.4, -2.2, -12.3, 0.6, -5.5, -0.7, -1.2, -2.0]},
+        {name: 'TV & Video', data: [5.9, 6.3, 4.7, 10.9, 0.4, 4.9, 4.3, 3.5]}
     ];
 
     // Market revenue of game segment types in billion USD from 2017 to 2025
@@ -52,17 +48,17 @@ $(function () {
         {name: 'Physically Sold Video Games', data: [15.99, 15.06, 14.09, 14.51, 13.30, 11.36, 11.32, 11.28, 11.30]}
     ];
 
-    // Change in market revenue of game segment types in billion USD from 2017 to 2025
+    // Change in market revenue of game segment types in billion USD from 2018 to 2025
     var game_segment_market_revenue_change = [
-        {name: 'Cloud Gaming', data: [0, 20.9, 31.2, 42.8, 53.2, 60.2, 62.5, 59.4, 51.4]},
-        {name: 'Download Games', data:[0, 4.6, 6.2, 13.6, 8.6, -1.6, 10.0, 7.4, 6.1]},
-        {name: 'Gaming Hardware', data: [0, 0, 2.0, 16.8, 13.3, -1.7, 14.2, 11.3, 10.4]},
-        {name: 'Gaming Live Streaming', data: [0, 8.8, 12.3, 16.1, 19.5, 21.1, 20.1, 16.7, 12.3]},
-        {name: 'Gaming Networks', data: [0, 14.8, 17.2, 27.4, 15.1, 1.1, 13.0, 8.5, 6.4]},
-        {name: 'In-game Advertising', data: [0, 27.9, 20.8, 36.3, 41.5, 14.0, 13.6, 16.0, 13.5]},
-        {name: 'Mobile Games', data: [0, 14.8, 17.8, 24.4, 7.3, -16.9, 8.3, 10.6, 7.0]},
-        {name: 'Online Games', data: [0, 11.5, 13.2, 21.9, 11.7, -0.1, 9.8, 7.0, 5.4]},
-        {name: 'Physically Sold Video Games', data: [0, -5.8, -6.4, 2.9, -8.3, -14.6, -0.4, -0.3, 0.1]}
+        {name: 'Cloud Gaming', data: [20.9, 31.2, 42.8, 53.2, 60.2, 62.5, 59.4, 51.4]},
+        {name: 'Download Games', data:[4.6, 6.2, 13.6, 8.6, -1.6, 10.0, 7.4, 6.1]},
+        {name: 'Gaming Hardware', data: [0, 2.0, 16.8, 13.3, -1.7, 14.2, 11.3, 10.4]},
+        {name: 'Gaming Live Streaming', data: [8.8, 12.3, 16.1, 19.5, 21.1, 20.1, 16.7, 12.3]},
+        {name: 'Gaming Networks', data: [14.8, 17.2, 27.4, 15.1, 1.1, 13.0, 8.5, 6.4]},
+        {name: 'In-game Advertising', data: [27.9, 20.8, 36.3, 41.5, 14.0, 13.6, 16.0, 13.5]},
+        {name: 'Mobile Games', data: [14.8, 17.8, 24.4, 7.3, -16.9, 8.3, 10.6, 7.0]},
+        {name: 'Online Games', data: [11.5, 13.2, 21.9, 11.7, -0.1, 9.8, 7.0, 5.4]},
+        {name: 'Physically Sold Video Games', data: [-5.8, -6.4, 2.9, -8.3, -14.6, -0.4, -0.3, 0.1]}
     ];
 
     // Video games revenue in selected countries 2023
@@ -76,9 +72,17 @@ $(function () {
         {name: 'Revenue', data: [103.50, 53, 40.40]}
     ];
 
+    var game_industry_gva = [
+        {name: 'Million GBP', data: [397, 683, 521, 431, 389, 385, 926, 2161, 2454, 1769, 3204, 3475, 2220]}
+    ];
+
+    var game_industry_employment = [
+        {name: 'Number of Employees', data: [13, 15, 19, 24, 20, 23, 30, 22, 27, 33, 43, 47]}
+    ]
+
     // Popular gaming business models among developers worldwide 2024
     var business_models = [
-        {name: 'Developers (%)', data: [51, 32, 24, 21, 19, 10, 6, 6, 5, 4, 3]}
+        {name: 'Developers (%)', data: [51, 32, 24, 21, 21, 19, 10, 6, 6, 5, 4, 3]}
     ];
 
     // F2P games revenue worldwide in billion USD (2018-2024)
@@ -88,8 +92,11 @@ $(function () {
         {name: 'PC', data: [21.60, 21.50, 22.70, 23.10, 23.66, 24.39, 25.22]}
     ];
 
+    // F2P games revenue growth worldwide in % (2019-2024)
     var f2p_game_revenue_change = [
-
+        {name: 'Mobile', data: [13.95, 10.15, 2.44, 4.01, 5.82, 6.91]},
+        {name: 'Console', data: [-23.81, 12.50, 55.56, 26.79, 6.20, -5.84]},
+        {name: 'PC', data: [-0.46, 5.58, 1.76, 2.42, 3.09, 3.40]}
     ];
 
     // Fastest mobile games to reach 100 million usd in player spending as of June 2021 (Days needed)
@@ -251,12 +258,14 @@ $(function () {
                     label: {
                         connectorAllowed: false
                     },
-                    lineWidth: 2
+                    dataLabels: {
+                        enabled: true
+                    }
                 }
             },
             xAxis: {
                 title: {text: "Year"},
-                categories: [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029],
+                categories: [2019, 2020, 2021, 2022, 2023, 2024, "2025*", "2026*", "2027*", "2028*", "2029*"],
                 accessibility: {
                     rangeDescription: 'Range: 2019 to 2029'
                 }
@@ -307,44 +316,6 @@ $(function () {
             },
             legend: {enabled: false},
             dataset: steam_games_number
-        },
-        {   // Chart Options : Line, Column
-            seriesName: "steam_games_percent_increase",
-            seriesTitle: {
-                text: "Percentage Increase of Video Games Released on Steam (2005-2024)"
-            },
-            plotOptionsLine: {
-                series: {
-                    label: {
-                        connectorAllowed: false
-                    },
-                    dataLabels: {
-                        enabled: true
-                    }
-                }
-            },
-            plotOptionsColumn: {
-                column: {
-                    dataLabels: {
-                        enabled: true
-                    }
-                }
-            },
-            xAxis: {
-                title: {text: "Year"},
-                categories: [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
-                accessibility: {
-                    rangeDescription: 'Range: 2005 to 2024'
-                }
-            },
-            yAxis: {
-                title: {text: "Increase in Games from Previous Year(%)"},
-                // min: -10,
-                // max: 140,
-                // tickInterval: 20
-            },
-            legend: {enabled: false},
-            dataset: steam_games_percent_increase
         },
         {   // Digital Game Revenue in Selected Countries 2023
             // Chart Options : Bar
@@ -397,7 +368,7 @@ $(function () {
                         distance: -60,
                         format: '{point.percentage:.1f}%',
                         style: {
-                            fontSize: '1.2em',
+                            fontSize: '1.5em',
                             textOutline: 'none',
                             opacity: 0.8
                         },
@@ -448,6 +419,67 @@ $(function () {
                 ]
             }
         },
+        {
+            seriesName: "game_industry_gva",
+            seriesTitle: {text: "Video Game Industry's Gross Value Added (GVA) in the UK (2010-2022)"},
+            plotOptionsLine: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            plotOptionsColumn: {
+                column: {
+                    borderRadius: '0%',
+                    dataLabels: {
+                        enabled: true
+                    }
+                },
+            },
+            xAxis: {
+                title: {text: "Year"},
+                categories: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+                accessibility: {
+                    rangeDescription: "Range: From 2010 to 2022"
+                }
+            },
+            yAxis: {
+                title: {text: "GVA (Million GBP)"}
+            },
+            legend: {enabled: false},
+            dataset: game_industry_gva
+        },
+        {   // Number of employees in the gaming industry in 1000s (2011-2022)
+            // Chart options: Line
+            seriesName: "game_industry_employment",
+            seriesTitle: {text: "Number of Employees in the Video Game Industry in the UK (2011-2022)"},
+            plotOptionsLine: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            xAxis: {
+                title: {text: "Year"},
+                categories: [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+                accessibility: {
+                    rangeDescription: "Range: From 2011 to 2022"
+                }
+            },
+            yAxis: {
+                title: {text: "Number of employees (in 1000s)"},
+            },
+            legend: {enabled: false},
+            dataset: game_industry_employment
+        },
         {   // Popular business models among developers (2024)
             // Chart options: Bar
             seriesName: "business_models",
@@ -465,11 +497,11 @@ $(function () {
                 categories: [
                     "Digital Premium Game", "Free To Download", "DLC/Updates", "Physical Premium Game", "Paid In-Game Items", 
                     "Paid In-Game Currency", "Paid Subscription Library", "Gacha", "Community-Funded", "In-Game Product Placement", 
-                    "Premium Tier Subscriptions"
+                    "Premium Tier Subscriptions", "Blockchain-driven Monetization"
                 ],
                 accessibility: {
                     rangeDescription: 'Range: Digital Premium Game, Free To Download, DLC/Updates, Physical Premium Game, Paid In-Game Items, Paid In-Game Currency, ' + 
-                    'Paid Subscription Library, Gacha, Community-Funded, In-Game Product Placement, and Premium Tier Subscriptions'
+                    'Paid Subscription Library, Gacha, Community-Funded, In-Game Product Placement, Premium Tier Subscriptions, and Blockchain-driven Monetization'
                 }
             },
             yAxis: {
@@ -568,12 +600,9 @@ $(function () {
         }
     ];
 
-    function getDataset(datasetName){
-        
+    function getDataset(datasetName){        
         for (var i=0; i<datasets.length; i++){ 
 			if(datasets[i].seriesName === datasetName){
-				// $('#subheading').remove();
-				// $('header').append('<span id="subheading"><br />Dataset: '+datasets[i].seriesTitle+'</span>');
 				return (datasets[i]);
 			};
 		};
@@ -596,6 +625,12 @@ $(function () {
                 spacingRight: 30
             }
             plotType = dataSeries.plotOptionsArea;
+        } else if (lineType === "spline") {
+            chartType = {
+                type: "spline",
+                spacingRight: 30
+            }
+            plotType = dataSeries.plotOptionsLine;
         } else {
             alert('Error: No line chart matching ' + lineType);
 		    console.log ('No line chart matching ', lineType);
@@ -682,39 +717,21 @@ $(function () {
     };
 
     function build_vis_1(){
+        mediaMarketRevenueSeries = getDataset("media_market_revenue");
         playerCountSeries = getDataset("player_count");
         steamGamesSeries = getDataset("steam_games_number");
-        mediaMarketRevenueSeries = getDataset("media_market_revenue");
         deviceGameRevenueSeries = getDataset("device_game_revenue");
 
+        makeColumnChart("#media-market-revenue-chart", mediaMarketRevenueSeries, "column");
         makeLineChart("#player-count-chart", playerCountSeries, "line");
         makeLineChart("#steam-games-chart", steamGamesSeries, "line");
-        makeColumnChart("#media-market-revenue-chart", mediaMarketRevenueSeries, "column");
         makePieChart("#device-game-revenue-chart", deviceGameRevenueSeries);
     };
 
     function prep_vis_1_listeners(){
-        $('#steam-games-choice').on('change', function() {
-            seriesName = $('#steam-games-choice option:selected').val();
-            seriesType = $('#steam-games-chart-choice option:selected').val();
-            dataSeries	= getDataset(seriesName);
-            $('#steam-games-chart').empty();
-            if (seriesType === "line"){
-                makeLineChart("#steam-games-chart", dataSeries, seriesType);
-            }
-            else if (seriesType === "column") {
-                makeColumnChart("#steam-games-chart", dataSeries, seriesType);
-            } 
-            else {
-                alert("No series type matching " + seriesType);
-                console.log("No series type matching " + seriesType);
-            };
-        });
-
         $('#steam-games-chart-choice').on('change', function() {
-            seriesName = $('#steam-games-choice option:selected').val();
             seriesType = $('#steam-games-chart-choice option:selected').val();
-            dataSeries	= getDataset(seriesName);
+            dataSeries	= getDataset("steam_games_number");
             $('#steam-games-chart').empty();
             if (seriesType === "line"){
                 makeLineChart("#steam-games-chart", dataSeries, seriesType);
@@ -798,24 +815,89 @@ $(function () {
 
     function build_vis_2(){
         countryGameRevenueSeries = getDataset("country_game_revenue");
-        businessModelSeries = getDataset("business_models");
-        f2pGameRevenueSeries = getDataset("f2p_game_revenue");
-        
+        gameIndustryGVA = getDataset("game_industry_gva");
+        gameIndustryEmploymentSeries = getDataset("game_industry_employment");
+
         makeBarChart("#game-revenue-country-chart", countryGameRevenueSeries);
-        makeBarChart("#business-models-chart", businessModelSeries);
-        makeLineChart("#f2p-game-revenue-chart", f2pGameRevenueSeries, "line");
+        makeLineChart("#game-industry-gva-chart", gameIndustryGVA, "line");
+        makeLineChart("#game-industry-employment-chart", gameIndustryEmploymentSeries, "line");
     };
 
     function prep_vis_2_listeners(){
+        $('#game-industry-gva-chart-choice').on('change', function() {
+            seriesType = $('#game-industry-gva-chart-choice option:selected').val();
+            dataSeries	= getDataset("game_industry_gva");
+            $('#game-industry-gva-chart').empty();
+            if (seriesType === "line"){
+                makeLineChart("#game-industry-gva-chart", dataSeries, seriesType);
+            }
+            else if (seriesType === "column") {
+                makeColumnChart("#game-industry-gva-chart", dataSeries, seriesType);
+            } 
+            else {
+                alert("No series type matching " + seriesType);
+                console.log("No series type matching " + seriesType);
+            };
+        });
         
     };
 
     function build_vis_3(){
-
+        businessModelSeries = getDataset("business_models");
+        f2pGameRevenueSeries = getDataset("f2p_game_revenue");
+        
+        makeBarChart("#business-models-chart", businessModelSeries);
+        makeLineChart("#f2p-game-revenue-chart", f2pGameRevenueSeries, "line");
     };
 
     function prep_vis_3_listeners(){
-        
+        $('#f2p-game-revenue-choice').on('change', function() {
+            seriesName = $('#f2p-game-revenue-choice option:selected').val();
+            seriesType = $('#f2p-game-revenue-chart-choice option:selected').val();
+            dataSeries	= getDataset(seriesName);
+            $('#f2p-game-revenue-chart').empty();
+            if (seriesName === "f2p_game_revenue_change") {
+                $("#f2p-game-revenue-chart-choice option[value='stack']").remove(); 
+            } 
+            else if (seriesName === "f2p_game_revenue")
+            {
+                $('#f2p-game-revenue-chart-choice').append('<option value="stack">Stacked Column</option>'); 
+            }
+
+            if (seriesType === "line"){
+                makeLineChart("#f2p-game-revenue-chart", dataSeries, seriesType);
+            }
+            else if (seriesType === "bar") {
+                makeBarChart("#f2p-game-revenue-chart", dataSeries);
+            }
+            else if (seriesType === "column" || seriesType === "stack") {
+                makeColumnChart("#f2p-game-revenue-chart", dataSeries, "column");
+            } 
+            else {
+                alert("No series type matching " + seriesType);
+                console.log("No series type matching " + seriesType);
+            };
+        });
+
+        $('#f2p-game-revenue-chart-choice').on('change', function() {
+            seriesName = $('#f2p-game-revenue-choice option:selected').val();
+            seriesType = $('#f2p-game-revenue-chart-choice option:selected').val();
+            dataSeries	= getDataset(seriesName);
+            $('#f2p-game-revenue-chart').empty();
+            if (seriesType === "line"){
+                makeLineChart("#f2p-game-revenue-chart", dataSeries, seriesType);
+            }
+            else if (seriesType === "bar") {
+                makeBarChart("#f2p-game-revenue-chart", dataSeries);
+            }
+            else if (seriesType === "column" || seriesType === "stack") {
+                makeColumnChart("#f2p-game-revenue-chart", dataSeries, "column");
+            } 
+            else {
+                alert("No series type matching " + seriesType);
+                console.log("No series type matching " + seriesType);
+            };
+        }); 
     };
 
     function build_vis_4(){
