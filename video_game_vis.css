@@ -44,17 +44,18 @@ li.tab-label {
 	font-size:	1.5em;
     height: 1.3sem;
 	border:	transparent;
-	background-color: #7f99b1;
+	background-color: black;
     margin: 0.2em;
 }
 
 #tabs li a {
     display: block;
 	text-decoration: none;
+	color: white;
 }
 
 #tabs li:hover {
-    background-color: #fbff00;
+    background-color: red;
 }
 
 .tab {

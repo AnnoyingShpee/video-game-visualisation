@@ -3,8 +3,8 @@ $(function () {
     // For tab 1 visualisations (History and General stuff)
     // Tab 1 datasets
     // Number of people who play video games worldwide in billions from 2019 to 2029.
-    var player_count = [
-        {name: 'Player Count', data: [1.84, 2.16, 2.31, 2.23, 2.42, 2.58, 2.68, 2.78, 2.86, 2.94, 3.02]}
+    var social_interaction = [
+        {name: 'Share of Respondents (%)', data: [84, 80, 77, 67, 44]}
     ];
     
     // Number of video games released in Steam from 2004 to 2023
@@ -72,12 +72,29 @@ $(function () {
         {name: 'Revenue', data: [103.50, 53, 40.40]}
     ];
 
+    // Video game sector tax revenues generated in UK 2011-2023 (2016 not available, 2018/2020, 2020/2021, 2023)
+    var game_tax_revenue = [
+        {name: 'Million GBP', data: [376, 390, 419, 460, 514, null, 613, 747, 907, 1189, 1500]}
+    ];
+
+    // Video game industry GDP contribution in UK 2008-2023 (2009, 2010, 2016 not available, 2018/2020, 2020/2021, 2023)
+    var game_gdp_contribution = [
+        {name: 'Million GBP', data: [1016, null, null, 912, 947, 1016, 1115, 1250, null, 1600, 1800, 2200, 2884, 3680]}
+    ];
+
+    // Video game industry GVA contribution in UK 2010-2022
     var game_industry_gva = [
         {name: 'Million GBP', data: [397, 683, 521, 431, 389, 385, 926, 2161, 2454, 1769, 3204, 3475, 2220]}
     ];
 
+    // Video game industry GVA contribution growth in UK 2011-2022
+    var game_industry_gva_change = [
+        {name: 'Growth (%)', data: [72.04, -23.72, -17.27, -9.74, -1.03, 140.53, 133.37, 13.56, -27.91, 81.12, 8.46, -36.12]}
+    ];
+
+    // Number of employees in the UK in 1000s 2011-2022
     var game_industry_employment = [
-        {name: 'Number of Employees', data: [13, 15, 19, 24, 20, 23, 30, 22, 27, 33, 43, 47]}
+        {name: 'Employees in 1000s', data: [13, 15, 19, 24, 20, 23, 30, 22, 27, 33, 43, 47]}
     ]
 
     // Popular gaming business models among developers worldwide 2024
@@ -99,22 +116,36 @@ $(function () {
         {name: 'PC', data: [-0.46, 5.58, 1.76, 2.42, 3.09, 3.40]}
     ];
 
+    // Most expensive games to develop worldwide as of September 2022 (in million U.S. dollars)
+    var most_expensive_games = [
+        {name: 'Million USD', data: [100, 700, 500, 441.9, 315, 220, 212, 200, 162, 156]}
+    ];
+
     // Fastest mobile games to reach 100 million usd in player spending as of June 2021 (Days needed)
     var fastest_100_mil_usd_mobile_games = [
-        {name: 'Honor of Kings', data: 11},
-        {name: 'Ni No Kuni: Cross Worlds', data: 11},
-        {name: 'Pokemon GO', data: 12},
-        {name: 'Genshin Impact', data: 13},
-        {name: 'Lineage 2: Revolution', data: 13}
+        {name: 'Days', data: [11, 11, 12, 13, 13]}
     ];
 
     // Fastest mobile games to reach 100 million usd in player spending as of March 2021 (Months needed)
     var fastest_1_bil_usd_mobile_games = [
-        {name: 'Genshin Impact', data: 6},
-        {name: 'Pokemon GO', data: 9},
-        {name: 'Lineage', data: 10},
-        {name: 'Clash Royale', data: 11},
-        {name: 'Lineage 2: Revolution', data: 12}
+        {name: 'Months', data: [6, 9, 10, 11, 12]}
+    ];
+
+    // Genshin IAP revenue from 2020 to 2024 (Million USD)
+    var genshin_iap_yearly = [
+        {name: 'Million USD', data: [392.8, 1233.78, 1367.61, 956.69, 158.34]}
+    ];
+
+    var genshin_iap_quarterly = [
+        {name: 'Million USD', data: [392.8, 335.36, 232.05, 369.12, 297.25, 401.32, 297.45, 301.37, 367.47, 334.91, 213.5, 179.46, 228.82, 158.34]}
+    ];
+
+    // Genshin IAP revenue from 2020 to 2024 (Million USD)
+    var genshin_iap_monthly = [
+        {name: 'Million USD', data: [
+            172.16, 105.80, 114.84, 103.95, 111.79, 119.62, 75.34, 89.71, 67, 112.58, 92.82, 163.72, 74.83, 128.25, 94.17, 148.79, 
+            119.47, 133.06, 116.08, 69.31, 112.06, 98.06, 98.48, 104.83, 94.31, 136.77, 136.39, 110.88, 133.19, 90.84, 99.88, 59.56, 
+            54.06, 52.63, 58.24, 68.59, 73.07, 100.63, 55.12, 60.95, 56.44, 40.95]}
     ];
 
     var datasets = [
@@ -131,20 +162,6 @@ $(function () {
                     },
                 }
             },
-            // plotOptionsArea: {
-            //     area: {
-            //         marker: {
-            //             enabled: true,
-            //             symbol: 'circle',
-            //             radius: 2,
-            //             states: {
-            //                 hover: {
-            //                     enabled: true
-            //                 }
-            //             }
-            //         }
-            //     }
-            // },
             plotOptionsBar: {
                 bar: {
                     groupPadding: 0.1
@@ -200,23 +217,9 @@ $(function () {
                 series: {
                     label: {
                         connectorAllowed: false
-                    },
+                    }
                 }
             },
-            // plotOptionsArea: {
-            //     area: {
-            //         marker: {
-            //             enabled: true,
-            //             symbol: 'circle',
-            //             radius: 2,
-            //             states: {
-            //                 hover: {
-            //                     enabled: true
-            //                 }
-            //             }
-            //         }
-            //     }
-            // },
             plotOptionsBar: {
                 bar: {
                     groupPadding: 0.1
@@ -249,35 +252,33 @@ $(function () {
             dataset: all_media_market_revenue_change
         },
         {   // Chart Options : Line
-            seriesName: "player_count",
+            seriesName: "social_interaction",
             seriesTitle: {
-                text: "Number of People who play Video Games worldwide (2019-2029)"
+                text: "How Online Video Games Help with Social Interaction for Gamers (2021)"
             },
-            plotOptionsLine: {
-                series: {
-                    label: {
-                        connectorAllowed: false
-                    },
+            plotOptionsBar: {
+                bar: {
+                    groupPadding: 0.1,
                     dataLabels: {
                         enabled: true
                     }
                 }
             },
             xAxis: {
-                title: {text: "Year"},
-                categories: [2019, 2020, 2021, 2022, 2023, 2024, "2025*", "2026*", "2027*", "2028*", "2029*"],
+                title: {text: "Social Interactions"},
+                categories: [
+                    "Help connect with people with similar interests", "Help meet with new people", "Help stay in touch with friends",
+                    "Easy to find the right community in online video games", "Games provide a safe outlet to trash talk"
+                ],
                 accessibility: {
-                    rangeDescription: 'Range: 2019 to 2029'
+                    rangeDescription: 'Help connect with people with similar interests, Help meet with new people, Help stay in touch with friends, Easy to find the right community in online video games, Games provide a safe outlet to trash talk'
                 }
             },
             yAxis: {
-                title: {text: "Player Count in Billion"},
-                min: 0,
-                max: 4,
-                tickInterval: 1
+                title: {text: "Share of Respondents who agree or strongly agree (%)"},
             },
             legend: {enabled: false},
-            dataset: player_count
+            dataset: social_interaction
         },
         {   // Chart Options : Line, Column
             seriesName: "steam_games_number",
@@ -325,12 +326,15 @@ $(function () {
             },
             plotOptionsBar: {
                 bar: {
-                    groupPadding: 0.1
+                    groupPadding: 0.1,
+                    dataLabels: {
+                        enabled: true
+                    }
                 }
             },
             xAxis: {
                 title: {text: "Country"},
-                categories: ["China", "United States", "Japan", "South Korea", "United Kingdom"],
+                categories: ["China", "United States (US)", "Japan", "South Korea", "United Kingdom (UK)"],
                 accessibility: {
                     rangeDescription: "Range: China, US, Japan, South Korea, UK"
                 }
@@ -354,7 +358,7 @@ $(function () {
             // Chart Options : Pie, Bar
             seriesName: "device_game_revenue",
             seriesTitle: {
-                text: "Revenue from Video Games based on Device in billion USD (2022)"
+                text: "Revenue from Video Games based on Device (2022)"
             },
             plotOptionsPie: {
                 series: {
@@ -404,7 +408,7 @@ $(function () {
                 }
             },
             yAxis: {
-                title: {text: "Revenue in billion USD"}
+                title: {text: "Revenue (Billion USD)"}
             },
             suffix: 'B',
             legend: {enabled: false},
@@ -438,7 +442,7 @@ $(function () {
                     dataLabels: {
                         enabled: true
                     }
-                },
+                }
             },
             xAxis: {
                 title: {text: "Year"},
@@ -452,6 +456,90 @@ $(function () {
             },
             legend: {enabled: false},
             dataset: game_industry_gva
+        },
+        {
+            seriesName: "game_industry_gva_change",
+            seriesTitle: {text: "Video Game Industry's Gross Value Added (GVA) Growth in the UK (2011-2022)"},
+            plotOptionsLine: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            plotOptionsColumn: {
+                column: {
+                    borderRadius: '0%',
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            xAxis: {
+                title: {text: "Year"},
+                categories: [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+                accessibility: {
+                    rangeDescription: "Range: From 2010 to 2022"
+                }
+            },
+            yAxis: {
+                title: {text: "Growth (%)"}
+            },
+            legend: {enabled: false},
+            dataset: game_industry_gva_change
+        },
+        {   // Video Game Industry tax revenue generated in Million GBP (2011-2023)
+            // Chart Options: Line
+            seriesName: "game_tax_revenue",
+            seriesTitle: {text: "UK Tax Revenue Generated by the Video Game Industry (2011-2023)"},
+            plotOptionsColumn: {
+                column: {
+                    borderRadius: '0%',
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            xAxis: {
+                title: {text: "Year"},
+                categories: [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, "2018/20*", "2020/21*", "2023*"],
+                accessibility: {
+                    rangeDescription: "Range: 2011 to 2023. 2016 not available"
+                }
+            },
+            yAxis: {
+                title: {text: "Tax revenue (Million GBP)"}
+            },
+            legend: {enabled: false},
+            dataset: game_tax_revenue
+        },
+        {   // Video Game Industry GDP contribution in UK (2008-2023)
+            // Chart Options: Line
+            seriesName: "game_gdp_contribution",
+            seriesTitle: {text: "Gross Domestic Product(GDP) Contribution by the Video Game Industry in the UK (2008-2023)"},
+            plotOptionsColumn: {
+                column: {
+                    borderRadius: '0%',
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            xAxis: {
+                title: {text: "Year"},
+                categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, "2018/20*", "2020/21*", "2023*"],
+                accessibility: {
+                    rangeDescription: "Range: 2011 to 2023. 2016 not available"
+                }
+            },
+            yAxis: {
+                title: {text: "GDP (Million GBP)"}
+            },
+            legend: {enabled: false},
+            dataset: game_gdp_contribution
         },
         {   // Number of employees in the gaming industry in 1000s (2011-2022)
             // Chart options: Line
@@ -519,21 +607,33 @@ $(function () {
                     label: {
                         connectorAllowed: false
                     },
+                    dataLabels: {
+                        enabled: true
+                    }
                 }
             },
             plotOptionsBar: {
                 bar: {
-                    groupPadding: 0.1
+                    groupPadding: 0.1,
+                    dataLabels: {
+                        enabled: true
+                    }
                 }
             },
             plotOptionsColumn: {
                 column: {
-                    borderRadius: '0%'
+                    borderRadius: '0%',
+                    dataLabels: {
+                        enabled: true
+                    }
                 }
             },
             plotOptionsStack: {
                 column: {
-                    stacking: 'normal'
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true
+                    }
                 }
             },
             xAxis: {
@@ -568,16 +668,25 @@ $(function () {
                     label: {
                         connectorAllowed: false
                     },
+                    dataLabels: {
+                        enabled: true
+                    }
                 }
             },
             plotOptionsBar: {
                 bar: {
-                    groupPadding: 0.1
+                    groupPadding: 0.1,
+                    dataLabels: {
+                        enabled: true
+                    }
                 }
             },
             plotOptionsColumn: {
                 column: {
-                    borderRadius: '0%'
+                    borderRadius: '0%',
+                    dataLabels: {
+                        enabled: true
+                    }
                 }
             },
             xAxis: {
@@ -597,6 +706,199 @@ $(function () {
                 verticalAlign: 'middle'
             },
             dataset: f2p_game_revenue_change
+        },
+        {   // Fastest mobile games to reach 100 million usd in player spending as of June 2021 (Days needed)
+            // Chart Options: Column
+            seriesName: "fastest_100_mil_usd_mobile_games",
+            seriesTitle: {text: "Fastest Mobile Games to reach 100 Million USD in Player Spending (2021)"},
+            plotOptionsColumn: {
+                column: {
+                    borderRadius: '0%',
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            xAxis: {
+                title: {text: "Mobile Games"},
+                categories: ["Honor of Kings", "Ni No Kuni: Cross Worlds", "Pokemon GO", "Genshin Impact", "Lineage 2: Revolution"],
+                accessibility: {
+                    rangeDescription: "Honor of Kings, Ni No Kuni: Cross Worlds, Pokemon GO, Genshin Impact, Lineage 2: Revolution"
+                }
+            },
+            yAxis: {
+                title: {text: "Days needed to reach 100 Million USD"}
+            },
+            legend: {enabled: false},
+            dataset: fastest_100_mil_usd_mobile_games
+        },
+        {   // Fastest mobile games to reach 100 million usd in player spending as of March 2021 (Months needed)
+            // Chart Options: Column
+            seriesName: "fastest_1_bil_usd_mobile_games",
+            seriesTitle: {text: "Fastest Mobile Games to reach 1 Billion USD in Player Spending (2021)"},
+            plotOptionsColumn: {
+                column: {
+                    borderRadius: '0%',
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            xAxis: {
+                title: {text: "Mobile Games"},
+                categories: ["Genshin Impact", "Pokemon GO", "Lineage", "Clash Royale", "Lineage 2: Revolution"],
+                accessibility: {
+                    rangeDescription: "Genshin Impact, Pokemon GO, Lineage, Clash Royale, Lineage 2: Revolution"
+                }
+            },
+            yAxis: {
+                title: {text: "Months needed to reach 1 Billion USD"}
+            },
+            legend: {enabled: false},
+            dataset: fastest_1_bil_usd_mobile_games
+        },
+        {   // Genshin IAP yearly revenue 2020-2024 (Million USD)
+            // Chart Options: Line, Column
+            seriesName: "genshin_iap_yearly",
+            seriesTitle: {text: "Genshin Impact Yearly IAP Revenue (2020-2024)"},
+            plotOptionsLine: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            plotOptionsColumn: {
+                column: {
+                    borderRadius: '0%',
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            xAxis: {
+                title: {text: "Year"},
+                categories: ["2020*", "2021", "2022", "2023", "2024*"],
+                accessibility: {
+                    rangeDescription: "Range: 2020 to 2024"
+                }
+            },
+            yAxis: {
+                title: {text: "IAP Revenue (Million USD)"}
+            },
+            legend: {enabled: false},
+            dataset: genshin_iap_yearly
+        },
+        {   // Genshin IAP Quarterly revenue 2020-2024 (Million USD)
+            // Chart Options: Line, Column
+            seriesName: "genshin_iap_quarterly",
+            seriesTitle: {text: "Genshin Impact Quarterly IAP Revenue (2020-2024)"},
+            plotOptionsLine: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            plotOptionsColumn: {
+                column: {
+                    borderRadius: '0%',
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            xAxis: {
+                title: {text: "Quarter"},
+                categories: [
+                    "Q4 2020", "Q1 2021", "Q2 2021", "Q3 2021", "Q4 2021", "Q1 2022", "Q2 2022", "Q3 2022", "Q4 2022", 
+                    "Q1 2023", "Q2 2023", "Q3 2023", "Q4 2023", "Q1 2024"
+                ],
+                accessibility: {
+                    rangeDescription: "Range: Q4 2020 to Q1 2024"
+                }
+            },
+            yAxis: {
+                title: {text: "IAP Revenue (Million USD)"}
+            },
+            legend: {enabled: false},
+            dataset: genshin_iap_quarterly
+        },
+        {   // Genshin IAP Monthly revenue 2020-2024 (Million USD)
+            // Chart Options: Line, Column
+            seriesName: "genshin_iap_monthly",
+            seriesTitle: {text: "Genshin Impact Monthly IAP Revenue (2020-2024)"},
+            plotOptionsLine: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            plotOptionsColumn: {
+                column: {
+                    borderRadius: '0%',
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            xAxis: {
+                title: {text: "Month"},
+                categories: [
+                    "10-2020", "11-2020", "12-2020", 
+                    "01-2021", "02-2021", "03-2021", "04-2021", "05-2021", "06-2021", "07-2021", "08-2021", "09-2021", "10-2021", "11-2021", "12-2021",
+                    "01-2022", "02-2022", "03-2022", "04-2022", "05-2022", "06-2022", "07-2022", "08-2022", "09-2022", "10-2022", "11-2022", "12-2022",
+                    "01-2023", "02-2023", "03-2023", "04-2023", "05-2023", "06-2023", "07-2023", "08-2023", "09-2023", "10-2023", "11-2023", "12-2023",
+                    "01-2024", "02-2024", "03-2024"
+                ],
+                accessibility: {
+                    rangeDescription: "Range: 10-2020 to 03-2024"
+                }
+            },
+            yAxis: {
+                title: {text: "IAP Revenue (Million USD)"}
+            },
+            legend: {enabled: false},
+            dataset: genshin_iap_monthly
+        },
+        {   // Most expensive games to develop worldwide as of September 2022 (in million U.S. dollars)
+            // Chart Options: Bar
+            seriesName: "most_expensive_games",
+            seriesTitle: {text: "Most Expensive Games to develop as of 2024"},
+            plotOptionsBar: {
+                bar: {
+                    groupPadding: 0.1,
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            xAxis: {
+                title: {text: "Games"},
+                categories: [
+                    "Genshin Impact (2020)", "Genshin Impact (2024)", "Monopoly Go!", "Cyberpunk 2077", 
+                    "Marvel's Spider-Man 2", "The Last of Us Part II", "Horizon Forbidden West", "Call of Duty: Modern Warfare 2", 
+                    "The Callisto Protocol", "Marvel's Spider-Man: Miles Morales"
+                ],
+                accessibility: {
+                    rangeDescription: "Genshin Impact, , Monopoly Go!, Cyberpunk 2077, Marvel's Spider-Man 2, The Last of Us Part II, Horizon Forbidden West, Call of Duty: Modern Warfare 2, The Callisto Protocol, Marvel's Spider-Man: Miles Morales"
+                }
+            },
+            yAxis: {
+                title: {text: "Total Cost (Million USD)"}
+            },
+            legend: {enabled: false},
+            dataset: most_expensive_games
         }
     ];
 
@@ -664,7 +966,6 @@ $(function () {
             plotOptions: dataSeries.plotOptionsBar,
             series: dataSeries.dataset
         };
-
         console.log(barChartSpec);
         $(renderTo).highcharts(barChartSpec);
     };
@@ -718,12 +1019,12 @@ $(function () {
 
     function build_vis_1(){
         mediaMarketRevenueSeries = getDataset("media_market_revenue");
-        playerCountSeries = getDataset("player_count");
+        socialInteractionSeries = getDataset("social_interaction");
         steamGamesSeries = getDataset("steam_games_number");
         deviceGameRevenueSeries = getDataset("device_game_revenue");
 
         makeColumnChart("#media-market-revenue-chart", mediaMarketRevenueSeries, "column");
-        makeLineChart("#player-count-chart", playerCountSeries, "line");
+        makeBarChart("#social-interaction-chart", socialInteractionSeries, "line");
         makeLineChart("#steam-games-chart", steamGamesSeries, "line");
         makePieChart("#device-game-revenue-chart", deviceGameRevenueSeries);
     };
@@ -815,18 +1116,40 @@ $(function () {
 
     function build_vis_2(){
         countryGameRevenueSeries = getDataset("country_game_revenue");
-        gameIndustryGVA = getDataset("game_industry_gva");
+        gameIndustryGVASeries = getDataset("game_industry_gva");
+        gameTaxRevenueSeries = getDataset("game_tax_revenue");
+        gameGDPContributionSeries = getDataset("game_gdp_contribution");
         gameIndustryEmploymentSeries = getDataset("game_industry_employment");
 
         makeBarChart("#game-revenue-country-chart", countryGameRevenueSeries);
-        makeLineChart("#game-industry-gva-chart", gameIndustryGVA, "line");
+        makeLineChart("#game-industry-gva-chart", gameIndustryGVASeries, "line");
+        makeColumnChart("#game-tax-revenue-chart", gameTaxRevenueSeries, "column");
+        makeColumnChart("#game-gdp-contribution-chart", gameGDPContributionSeries, "column");
         makeLineChart("#game-industry-employment-chart", gameIndustryEmploymentSeries, "line");
     };
 
     function prep_vis_2_listeners(){
-        $('#game-industry-gva-chart-choice').on('change', function() {
+        $('#game-industry-gva-choice').on('change', function() {
+            seriesName = $('#game-industry-gva-choice option:selected').val();
             seriesType = $('#game-industry-gva-chart-choice option:selected').val();
-            dataSeries	= getDataset("game_industry_gva");
+            dataSeries	= getDataset(seriesName);
+            $('#game-industry-gva-chart').empty();
+            if (seriesType === "line"){
+                makeLineChart("#game-industry-gva-chart", dataSeries, seriesType);
+            }
+            else if (seriesType === "column") {
+                makeColumnChart("#game-industry-gva-chart", dataSeries, seriesType);
+            } 
+            else {
+                alert("No series type matching " + seriesType);
+                console.log("No series type matching " + seriesType);
+            };
+        });
+
+        $('#game-industry-gva-chart-choice').on('change', function() {
+            seriesName = $('#game-industry-gva-choice option:selected').val();
+            seriesType = $('#game-industry-gva-chart-choice option:selected').val();
+            dataSeries	= getDataset(seriesName);
             $('#game-industry-gva-chart').empty();
             if (seriesType === "line"){
                 makeLineChart("#game-industry-gva-chart", dataSeries, seriesType);
@@ -858,6 +1181,9 @@ $(function () {
             $('#f2p-game-revenue-chart').empty();
             if (seriesName === "f2p_game_revenue_change") {
                 $("#f2p-game-revenue-chart-choice option[value='stack']").remove(); 
+                if (seriesType === "stack") {
+                    seriesType = "line";
+                }
             } 
             else if (seriesName === "f2p_game_revenue")
             {
@@ -871,7 +1197,7 @@ $(function () {
                 makeBarChart("#f2p-game-revenue-chart", dataSeries);
             }
             else if (seriesType === "column" || seriesType === "stack") {
-                makeColumnChart("#f2p-game-revenue-chart", dataSeries, "column");
+                makeColumnChart("#f2p-game-revenue-chart", dataSeries, seriesType);
             } 
             else {
                 alert("No series type matching " + seriesType);
@@ -884,6 +1210,14 @@ $(function () {
             seriesType = $('#f2p-game-revenue-chart-choice option:selected').val();
             dataSeries	= getDataset(seriesName);
             $('#f2p-game-revenue-chart').empty();
+            if (seriesName === "f2p_game_revenue_change") {
+                $("#f2p-game-revenue-chart-choice option[value='stack']").remove(); 
+            } 
+            else if (seriesName === "f2p_game_revenue")
+            {
+                $('#f2p-game-revenue-chart-choice').append('<option value="stack">Stacked Column</option>'); 
+            }
+
             if (seriesType === "line"){
                 makeLineChart("#f2p-game-revenue-chart", dataSeries, seriesType);
             }
@@ -891,7 +1225,7 @@ $(function () {
                 makeBarChart("#f2p-game-revenue-chart", dataSeries);
             }
             else if (seriesType === "column" || seriesType === "stack") {
-                makeColumnChart("#f2p-game-revenue-chart", dataSeries, "column");
+                makeColumnChart("#f2p-game-revenue-chart", dataSeries, seriesType);
             } 
             else {
                 alert("No series type matching " + seriesType);
@@ -901,11 +1235,54 @@ $(function () {
     };
 
     function build_vis_4(){
+        fastest100MilSeries = getDataset("fastest_100_mil_usd_mobile_games");
+        genshinIAPSeries = getDataset("genshin_iap_yearly");
+        mostExpensiveGamesSeries = getDataset("most_expensive_games");
 
+        makeColumnChart("#fastest-player-spending-chart", fastest100MilSeries, "column");
+        makeLineChart("#genshin-iap-chart", genshinIAPSeries, "line");
+        makeBarChart("#most-expensive-games-chart", mostExpensiveGamesSeries);
     };
 
     function prep_vis_4_listeners(){
-        
+        $("#fastest-player-spending-choice").on("change", function(){
+            seriesName = $("#fastest-player-spending-choice option:selected").val();
+            dataSeries = getDataset(seriesName);
+            $("#fastest-player-spending-chart").empty();
+            makeColumnChart("#fastest-player-spending-chart", dataSeries, "column");
+        });
+
+        $("#genshin-iap-choice").on("change", function(){
+            seriesName = $("#genshin-iap-choice option:selected").val();
+            seriesType = $("#genshin-iap-chart-choice option:selected").val();
+            dataSeries = getDataset(seriesName);
+            $("#genshin-iap-chart").empty();
+
+            if (seriesType === "line") {
+                makeLineChart("#genshin-iap-chart", dataSeries, "line");
+            } else if (seriesType === "column") {
+                makeColumnChart("#genshin-iap-chart", dataSeries, "column");
+            } else {
+                alert("No series type matching " + seriesType);
+                console.log("No series type matching " + seriesType);
+            };
+        });
+
+        $("#genshin-iap-chart-choice").on("change", function(){
+            seriesName = $("#genshin-iap-choice option:selected").val();
+            seriesType = $("#genshin-iap-chart-choice option:selected").val();
+            dataSeries = getDataset(seriesName);
+            $("#genshin-iap-chart").empty();
+
+            if (seriesType === "line") {
+                makeLineChart("#genshin-iap-chart", dataSeries, "line");
+            } else if (seriesType === "column") {
+                makeColumnChart("#genshin-iap-chart", dataSeries, "column");
+            } else {
+                alert("No series type matching " + seriesType);
+                console.log("No series type matching " + seriesType);
+            };
+        });
     };
 
     build_vis_1();
