@@ -77,19 +77,19 @@ $(function () {
         {name: 'Million GBP', data: [376, 390, 419, 460, 514, null, 613, 747, 907, 1189, 1500]}
     ];
 
-    // Video game industry GDP contribution in UK 2008-2023 (2009, 2010, 2016 not available, 2018/2020, 2020/2021, 2023)
+    // Video game industry GDP contribution in UK 2011-2023 (2016 not available, 2018/2020, 2020/2021, 2023)
     var game_gdp_contribution = [
-        {name: 'Million GBP', data: [1016, null, null, 912, 947, 1016, 1115, 1250, null, 1600, 1800, 2200, 2884, 3680]}
+        {name: 'Million GBP', data: [912, 947, 1016, 1115, 1250, null, 1600, 1800, 2200, 2884, 3680]}
     ];
 
-    // Video game industry GVA contribution in UK 2010-2022
+    // Video game industry GVA contribution in UK 2011-2022
     var game_industry_gva = [
-        {name: 'Million GBP', data: [397, 683, 521, 431, 389, 385, 926, 2161, 2454, 1769, 3204, 3475, 2220]}
+        {name: 'Million GBP', data: [683, 521, 431, 389, 385, 926, 2161, 2454, 1769, 3204, 3475, 2220]}
     ];
 
     // Video game industry GVA contribution growth in UK 2011-2022
     var game_industry_gva_change = [
-        {name: 'Growth (%)', data: [72.04, -23.72, -17.27, -9.74, -1.03, 140.53, 133.37, 13.56, -27.91, 81.12, 8.46, -36.12]}
+        {name: 'Growth (%)', data: [-23.72, -17.27, -9.74, -1.03, 140.53, 133.37, 13.56, -27.91, 81.12, 8.46, -36.12]}
     ];
 
     // Number of employees in the UK in 1000s 2011-2022
@@ -165,14 +165,6 @@ $(function () {
                     }
                 }
             },
-            plotOptionsBar: {
-                bar: {
-                    groupPadding: 0.1,
-                    dataLabels: {
-                        enabled: true
-                    }
-                }
-            },
             plotOptionsColumn: {
                 column: {
                     borderRadius: '0%',
@@ -230,14 +222,6 @@ $(function () {
                     label: {
                         connectorAllowed: false
                     },
-                    dataLabels: {
-                        enabled: true
-                    }
-                }
-            },
-            plotOptionsBar: {
-                bar: {
-                    groupPadding: 0.1,
                     dataLabels: {
                         enabled: true
                     }
@@ -314,13 +298,6 @@ $(function () {
                     dataLabels: {
                         enabled: true
                     }
-                }
-            },
-            plotOptionsColumn: {
-                column: {
-                    dataLabels: {
-                        enabled: true
-                    },
                 }
             },
             xAxis: {
@@ -446,41 +423,7 @@ $(function () {
         },
         {
             seriesName: "game_industry_gva",
-            seriesTitle: {text: "Video Game Industry's Gross Value Added (GVA) in the UK (2010-2022)"},
-            plotOptionsLine: {
-                series: {
-                    label: {
-                        connectorAllowed: false
-                    },
-                    dataLabels: {
-                        enabled: true
-                    }
-                }
-            },
-            plotOptionsColumn: {
-                column: {
-                    borderRadius: '0%',
-                    dataLabels: {
-                        enabled: true
-                    }
-                }
-            },
-            xAxis: {
-                title: {text: "Year"},
-                categories: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
-                accessibility: {
-                    rangeDescription: "Range: From 2010 to 2022"
-                }
-            },
-            yAxis: {
-                title: {text: "GVA (Million GBP)"}
-            },
-            legend: {enabled: false},
-            dataset: game_industry_gva
-        },
-        {
-            seriesName: "game_industry_gva_change",
-            seriesTitle: {text: "Video Game Industry's Gross Value Added (GVA) Growth in the UK (2011-2022)"},
+            seriesTitle: {text: "Video Game Industry's Gross Value Added (GVA) in the UK (2011-2022)"},
             plotOptionsLine: {
                 series: {
                     label: {
@@ -502,6 +445,40 @@ $(function () {
             xAxis: {
                 title: {text: "Year"},
                 categories: [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+                accessibility: {
+                    rangeDescription: "Range: From 2011 to 2022"
+                }
+            },
+            yAxis: {
+                title: {text: "GVA (Million GBP)"}
+            },
+            legend: {enabled: false},
+            dataset: game_industry_gva
+        },
+        {
+            seriesName: "game_industry_gva_change",
+            seriesTitle: {text: "Video Game Industry's Gross Value Added (GVA) Growth in the UK (2012-2022)"},
+            plotOptionsLine: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            plotOptionsColumn: {
+                column: {
+                    borderRadius: '0%',
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            xAxis: {
+                title: {text: "Year"},
+                categories: [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
                 accessibility: {
                     rangeDescription: "Range: From 2010 to 2022"
                 }
@@ -540,7 +517,7 @@ $(function () {
         {   // Video Game Industry GDP contribution in UK (2008-2023)
             // Chart Options: Line
             seriesName: "game_gdp_contribution",
-            seriesTitle: {text: "Gross Domestic Product(GDP) Contribution by the Video Game Industry in the UK (2008-2023)"},
+            seriesTitle: {text: "Gross Domestic Product(GDP) Contribution by the Video Game Industry in the UK (2011-2023)"},
             plotOptionsColumn: {
                 column: {
                     borderRadius: '0%',
@@ -551,7 +528,7 @@ $(function () {
             },
             xAxis: {
                 title: {text: "Year"},
-                categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, "2018/20*", "2020/21*", "2023*"],
+                categories: [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, "2018/20*", "2020/21*", "2023*"],
                 accessibility: {
                     rangeDescription: "Range: 2011 to 2023. 2016 not available"
                 }
@@ -633,14 +610,6 @@ $(function () {
                     }
                 }
             },
-            plotOptionsBar: {
-                bar: {
-                    groupPadding: 0.1,
-                    dataLabels: {
-                        enabled: true
-                    }
-                }
-            },
             plotOptionsColumn: {
                 column: {
                     borderRadius: '0%',
@@ -689,14 +658,6 @@ $(function () {
                     label: {
                         connectorAllowed: false
                     },
-                    dataLabels: {
-                        enabled: true
-                    }
-                }
-            },
-            plotOptionsBar: {
-                bar: {
-                    groupPadding: 0.1,
                     dataLabels: {
                         enabled: true
                     }
@@ -1051,22 +1012,6 @@ $(function () {
     };
 
     function prep_vis_1_listeners(){
-        $('#steam-games-chart-choice').on('change', function() {
-            seriesType = $('#steam-games-chart-choice option:selected').val();
-            dataSeries	= getDataset("steam_games_number");
-            $('#steam-games-chart').empty();
-            if (seriesType === "line"){
-                makeLineChart("#steam-games-chart", dataSeries, seriesType);
-            }
-            else if (seriesType === "column") {
-                makeColumnChart("#steam-games-chart", dataSeries, seriesType);
-            } 
-            else {
-                alert("No series type matching " + seriesType);
-                console.log("No series type matching " + seriesType);
-            };
-        });
-
         $('#media-market-choice').on('change', function() {
             seriesName = $('#media-market-choice option:selected').val();
             seriesType = $('#media-market-chart-choice option:selected').val();
@@ -1082,11 +1027,7 @@ $(function () {
 
             if (seriesType === "line"){
                 makeLineChart("#media-market-revenue-chart", dataSeries, seriesType);
-            }
-            else if (seriesType === "bar") {
-                makeBarChart("#media-market-revenue-chart", dataSeries);
-            }
-            else if (seriesType === "column" || seriesType === "stack") {
+            } else if (seriesType === "column" || seriesType === "stack") {
                 makeColumnChart("#media-market-revenue-chart", dataSeries, "column");
             } 
             else {
@@ -1143,9 +1084,9 @@ $(function () {
         gameIndustryEmploymentSeries = getDataset("game_industry_employment");
 
         makeBarChart("#game-revenue-country-chart", countryGameRevenueSeries);
-        makeLineChart("#game-industry-gva-chart", gameIndustryGVASeries, "line");
         makeColumnChart("#game-tax-revenue-chart", gameTaxRevenueSeries, "column");
         makeColumnChart("#game-gdp-contribution-chart", gameGDPContributionSeries, "column");
+        makeColumnChart("#game-industry-gva-chart", gameIndustryGVASeries, "column");
         makeLineChart("#game-industry-employment-chart", gameIndustryEmploymentSeries, "line");
     };
 
@@ -1213,12 +1154,8 @@ $(function () {
 
             if (seriesType === "line"){
                 makeLineChart("#f2p-game-revenue-chart", dataSeries, seriesType);
-            }
-            else if (seriesType === "bar") {
-                makeBarChart("#f2p-game-revenue-chart", dataSeries);
-            }
-            else if (seriesType === "column" || seriesType === "stack") {
-                makeColumnChart("#f2p-game-revenue-chart", dataSeries, seriesType);
+            } else if (seriesType === "column" || seriesType === "stack") {
+                makeColumnChart("#f2p-game-revenue-chart", dataSeries, "column");
             } 
             else {
                 alert("No series type matching " + seriesType);
@@ -1231,21 +1168,10 @@ $(function () {
             seriesType = $('#f2p-game-revenue-chart-choice option:selected').val();
             dataSeries	= getDataset(seriesName);
             $('#f2p-game-revenue-chart').empty();
-            if (seriesName === "f2p_game_revenue_change") {
-                $("#f2p-game-revenue-chart-choice option[value='stack']").remove(); 
-            } 
-            else if (seriesName === "f2p_game_revenue")
-            {
-                $('#f2p-game-revenue-chart-choice').append('<option value="stack">Stacked Column</option>'); 
-            }
 
             if (seriesType === "line"){
                 makeLineChart("#f2p-game-revenue-chart", dataSeries, seriesType);
-            }
-            else if (seriesType === "bar") {
-                makeBarChart("#f2p-game-revenue-chart", dataSeries);
-            }
-            else if (seriesType === "column" || seriesType === "stack") {
+            } else if (seriesType === "column" || seriesType === "stack") {
                 makeColumnChart("#f2p-game-revenue-chart", dataSeries, seriesType);
             } 
             else {
