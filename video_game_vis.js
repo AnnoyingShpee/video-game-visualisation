@@ -160,21 +160,33 @@ $(function () {
                     label: {
                         connectorAllowed: false
                     },
+                    dataLabels: {
+                        enabled: true
+                    }
                 }
             },
             plotOptionsBar: {
                 bar: {
-                    groupPadding: 0.1
+                    groupPadding: 0.1,
+                    dataLabels: {
+                        enabled: true
+                    }
                 }
             },
             plotOptionsColumn: {
                 column: {
-                    borderRadius: '0%'
+                    borderRadius: '0%',
+                    dataLabels: {
+                        enabled: true
+                    }
                 }
             },
             plotOptionsStack: {
                 column: {
-                    stacking: 'normal'
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true
+                    }
                 }
             },
             xAxis: {
@@ -217,17 +229,26 @@ $(function () {
                 series: {
                     label: {
                         connectorAllowed: false
+                    },
+                    dataLabels: {
+                        enabled: true
                     }
                 }
             },
             plotOptionsBar: {
                 bar: {
-                    groupPadding: 0.1
+                    groupPadding: 0.1,
+                    dataLabels: {
+                        enabled: true
+                    }
                 }
             },
             plotOptionsColumn: {
                 column: {
-                    borderRadius: '0%'
+                    borderRadius: '0%',
+                    dataLabels: {
+                        enabled: true
+                    }
                 }
             },
             xAxis: {

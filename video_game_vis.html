@@ -21,21 +21,21 @@
 
 	<body>
 		<header>
-			<h1><a href="#tab1">Video Game Reporting</a></h1>
-			<h2>Main Data Source: <a href="https://www.statista.com/markets/417/topic/478/video-gaming-esports/#overview">Statista.com</a></h2>
+			<h1>Video Game Information Visualisation</h1>
+			<!-- <h2>Main Data Source: <a class="statista-link" href="https://www.statista.com/markets/417/topic/478/video-gaming-esports/#overview">Statista.com</a></h2> -->
 		</header>
 
 		<div id="tabs">
 			<ul>
-				<li class="tab-label"><a href="#tab1">Introduction</a></li>
-				<li class="tab-label"><a href="#tab2">Games' Economic Effect</a></li>
+				<li class="tab-label"><a href="#tab1">Background</a></li>
+				<li class="tab-label"><a href="#tab2">Games' Economic Impact (UK)</a></li>
 				<li class="tab-label"><a href="#tab3">Games as a Business</a></li>
 				<li class="tab-label"><a href="#tab4">Free-To-Play Example</a></li>
 			</ul>
 			
 			<div id="tab1" class="tab">
 				<div class="component">
-					<h2>Introduction</h2>
+					<h2>Background</h2>
 					<p>
 						A <a href="https://en.wikipedia.org/wiki/Video_game">video game</a> is an electronic game that involves a user interacting with a 
 						user interface or device to create audio and visual feedback from an electronic device. The earliest known video game was from 1947, 
@@ -50,34 +50,6 @@
 						<a href="https://en.wikipedia.org/wiki/Augmented_reality">augmented reality</a>, its growth only continues. This website aims to visualise
 						and discuss some relevant topics relating to video games with the target audience being those that have reservations regarding video games 
 						as a whole in the UK.
-					</p>
-				</div>
-				<div id="media-market-revenue-chart-area" class="component">
-					<div id="media-market-revenue-chart"></div>
-					<div class="filter">
-						Data to display: 
-						<select name="media-market-choice" id="media-market-choice">
-							<option value="media_market_revenue">Actual Value</option>
-							<option value="media_market_revenue_change">Revenue Growth</option>
-						</select>
-						Chart Type: 
-						<select name="media-market-chart-choice" id="media-market-chart-choice">
-							<option value="column">Column</option>
-							<option value="line">Line</option>
-							<option value="bar">Bar</option>
-							<option value="stack">Stacked Column</option>
-						</select>
-					</div>
-					<a href="https://www.statista.com/outlook/amo/media/worldwide#revenue">Source</a>
-					<p>
-						The media market contains a variety of platforms that allows for content to be created, distributed, and consumed. This 
-						ranges from traditional means (TV, radio, and printed mediums like books), to digital (social media and streaming services).
-						The video game industry is no exception, being part of the digital media side of the market. Looking at the graph, video games 
-						can be seen to have the 2nd highest market overall, only being outcompeted by TV & Video. When the COVID-19 pandemic happened, 
-						tradional media markets were affected negatively with cinema suffering the greatest as it was difficult to film are maintaining 
-						social distancing. Due to quarantine, most people would be staying in their homes and needed to do something to pass the time, 
-						usually by playing games or watching shows or videos in streaming sites or social media. Hence, the increase in revenue rather 
-						than decrease.
 					</p>
 				</div>
 
@@ -112,6 +84,35 @@
 						significantly as the number of games released was still close to the previous year's amount. 
 					</p>
 				</div>
+
+				<div id="media-market-revenue-chart-area" class="component">
+					<div id="media-market-revenue-chart"></div>
+					<div class="filter">
+						Data to display: 
+						<select name="media-market-choice" id="media-market-choice">
+							<option value="media_market_revenue">Actual Value</option>
+							<option value="media_market_revenue_change">Revenue Growth</option>
+						</select>
+						Chart Type: 
+						<select name="media-market-chart-choice" id="media-market-chart-choice">
+							<option value="column">Column</option>
+							<option value="line">Line</option>
+							<option value="bar">Bar</option>
+							<option value="stack">Stacked Column</option>
+						</select>
+					</div>
+					<a href="https://www.statista.com/outlook/amo/media/worldwide#revenue">Source</a>
+					<p>
+						The media market contains a variety of platforms that allows for content to be created, distributed, and consumed. This 
+						ranges from traditional means (TV, radio, and printed mediums like books), to digital (social media and streaming services).
+						The video game industry is no exception, being part of the digital media side of the market. Looking at the graph, video games 
+						can be seen to have the 2nd highest market overall, only being outcompeted by TV & Video. When the COVID-19 pandemic happened, 
+						tradional media markets were affected negatively with cinema suffering the greatest as it was difficult to film are maintaining 
+						social distancing. Due to quarantine, most people would be staying in their homes and needed to do something to pass the time, 
+						usually by playing games or watching shows or videos in streaming sites or social media. Hence, the increase in revenue rather 
+						than decrease.
+					</p>
+				</div>
 				
 				<div id="device-game-revenue-chart-area" class="component">
 					<div id="device-game-revenue-chart"></div>
@@ -137,7 +138,7 @@
 
 			<div id="tab2" class="tab">
 				<div class="component">
-					<h2>Games' Economic Effect</h2>
+					<h2>Games' Economic Effect (UK)</h2>
 					<div id="game-revenue-country-chart"></div>
 					<a href="https://www.statista.com/forecasts/954104/video-games-revenue-in-selected-countries-statistic">Source</a>
 					<p>
@@ -268,7 +269,7 @@
 
 			<div id="tab4" class="tab">
 				<div class="component">
-					<h2>A Free-To-Play Example (Genshin Impact)</h2>
+					<h2>Free-To-Play Example (Genshin Impact)</h2>
 					<P>
 						F2P games have become very common in the video game industry, appearing mostly in the mobile and PC areas. As players can easily 
 						download these games and play straight away without the need to pay, game companies have to use one or more business models to 

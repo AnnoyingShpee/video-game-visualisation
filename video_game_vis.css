@@ -10,8 +10,8 @@ body {
 
 header	{	
 	padding-left: 1%;
-	height: 5em;
-	border: 1px solid red;
+	padding-top: 0.2%;
+	height: 3em;
 }
 
 header h1	{
@@ -24,13 +24,17 @@ header h2 {
 	margin: 0.1em;
 }
 
-header a {
+.statista-link {
 	text-decoration: none;
+	color: blue
+}
+
+.statista-link:hover {
+	color: red;
 }
 
 #tabs ul {
 	text-align:     center;
-    border:         1px solid pink;
 	display:	flex;
 	flex-wrap:	wrap; 
     padding:    0;
