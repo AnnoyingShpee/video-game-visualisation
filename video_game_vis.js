@@ -517,7 +517,7 @@ $(function () {
         {   // Video Game Industry GDP contribution in UK (2008-2023)
             // Chart Options: Line
             seriesName: "game_gdp_contribution",
-            seriesTitle: {text: "Gross Domestic Product(GDP) Contribution by the Video Game Industry in the UK (2011-2023)"},
+            seriesTitle: {text: "Gross Domestic Product (GDP) Contribution by the Video Game Industry in the UK (2011-2023)"},
             plotOptionsColumn: {
                 column: {
                     borderRadius: '0%',
