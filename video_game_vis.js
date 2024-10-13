@@ -74,12 +74,12 @@ $(function () {
 
     // Video game sector tax revenues generated in UK 2011-2023 (2016 not available, 2018/2020, 2020/2021, 2023)
     var game_tax_revenue = [
-        {name: 'Million GBP', data: [376, 390, 419, 460, 514, null, 613, 747, 907, 1189, 1500]}
+        {name: 'Million GBP', data: [376, 390, 419, 460, 514, 613, 747, 907, 1189, 1500]}
     ];
 
     // Video game industry GDP contribution in UK 2011-2023 (2016 not available, 2018/2020, 2020/2021, 2023)
     var game_gdp_contribution = [
-        {name: 'Million GBP', data: [912, 947, 1016, 1115, 1250, null, 1600, 1800, 2200, 2884, 3680]}
+        {name: 'Million GBP', data: [912, 947, 1016, 1115, 1250, 1600, 1800, 2200, 2884, 3680]}
     ];
 
     // Video game industry GVA contribution in UK 2011-2022
@@ -503,7 +503,7 @@ $(function () {
             },
             xAxis: {
                 title: {text: "Year"},
-                categories: [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, "2018/20*", "2020/21*", "2023*"],
+                categories: [2011, 2012, 2013, 2014, 2015, 2017, 2018, "2018/20*", "2020/21*", "2021/23*"],
                 accessibility: {
                     rangeDescription: "Range: 2011 to 2023. 2016 not available"
                 }
@@ -528,7 +528,7 @@ $(function () {
             },
             xAxis: {
                 title: {text: "Year"},
-                categories: [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, "2018/20*", "2020/21*", "2023*"],
+                categories: [2011, 2012, 2013, 2014, 2015, 2017, 2018, "2018/20*", "2020/21*", "2021/23*"],
                 accessibility: {
                     rangeDescription: "Range: 2011 to 2023. 2016 not available"
                 }
